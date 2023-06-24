@@ -6,12 +6,17 @@ import { useData } from '../context/DataContext';
 const PostDetail = () => {
     const {username }= useParams();
    const {forumData} = useData();
-   const post = forumData.posts.filter((post) => post.username === username)
+   const posts = forumData.posts.filter((post) => post.username === username)
     console.log(username , "param post");
 
   return (
     <div>
-        <PostCard post={post}/>
+        {
+            posts.map(post => 
+                <PostCard post={post}/>
+                )
+        }
+        
     </div>
   )
 }
