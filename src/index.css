@@ -28,10 +28,13 @@ body {
 }
 .d-flx{
     display: flex;
-    
+    align-items: center;
 }
 .ml-1{
     margin-left: 1rem;
+}
+.mt-1{
+    margin-top: 1rem;
 }
 .link{
     margin-left: 1rem;
@@ -93,4 +96,45 @@ img {
 .user__info .username{
     font-size: 0.8rem;
 color: var(--color-gray)
+}
+.post__container{
+    padding: 0.7rem;
+    background-color: var(--color-white);
+    margin-bottom: 1.5rem;
+}
+.post__container h3{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.tag{
+    border: 1px solid var(--color-gray);
+    color: var(--color-primary);
+    background-color: #efebeb;
+    padding: 0.3rem;
+    margin: 0.5rem 0.8rem 0.8rem 0; 
+    border-radius: 15px;
+    font-size: 0.6rem;
+}
+.post__desc{
+    margin: 0.7rem 0;
+    font-size: 14px;
+    border-bottom: 1px solid  #c3c2c2;
+    padding-bottom:0.6rem ;
+}
+.action__icons{
+    display: flex;
+    justify-content: space-between;
+    color: #c3c2c2;
+    cursor: pointer;
+}
+.upvote__sec{
+    display: flex;
+    flex-direction: column;
+}
+.post__sec{
+    display: flex;
+    gap: 1rem;
+}
+.sort__icon{
+    font-size: 3rem;
 }

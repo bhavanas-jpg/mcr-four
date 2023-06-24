@@ -9,7 +9,7 @@ export const forumData = {
         username: '@tanaypratap',
         name: 'Tanay Pratap',
         picUrl: 'http://bit.ly/42Zm7tM',
-        post: 'Join InvactHQ for MBA',
+        postTitle: 'Join InvactHQ for MBA',
         postDescription:
           'Non programmers on my timeline. Attention! After placing 100+ programmers i in top Indian startups, I am thinking of coming up with a program for business roles as well. Interested in helping me build this course? Join me at Invact.',
         upvotes: 350,
@@ -33,7 +33,7 @@ export const forumData = {
         username: '@trishajain',
         name: 'Trisha Jain',
         picUrl: 'http://bit.ly/42Zm7tM',
-        post: 'Can I learn HTML, CSS, and JavaScript in 1 year?',
+        postTitle: 'Can I learn HTML, CSS, and JavaScript in 1 year?',
         postDescription:
           'I am looking to make my career in web development and want to learn these technologies. Can I learn these in 1 year and get a job?',
         upvotes: 150,
