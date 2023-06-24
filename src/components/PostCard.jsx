@@ -2,7 +2,7 @@ import React from 'react';
 import { FaComment,FaSortUp, FaSortDown ,FaShare,FaBookmark  } from 'react-icons/fa';
 import { MdShare } from 'react-icons/md'
 import { useData } from '../context/DataContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const PostCard = ({post}) => {
   console.log(post);
@@ -20,6 +20,7 @@ const {dispatch, state} = useData();
     isBookmarked
     
     } =post;
+    const navigate = useNavigate();
 
     const currentPost= state.forumPosts.filter(post => post.username === username);
 
@@ -38,6 +39,7 @@ const {dispatch, state} = useData();
      }
       
       <FaSortDown
+       onClick={()=>dispatch({type: "DOWNVOTE", payload: username})}
       className="sort__icon" />
        </div>
         <div>
@@ -60,7 +62,7 @@ const {dispatch, state} = useData();
        
         <i
         onClick={()=>
-          <Link  to={`/post/:${username}`}/>
+       navigate(`/post/${username}`)
         }
         ><FaComment /></i>
         <i> <MdShare /></i>

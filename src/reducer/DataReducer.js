@@ -22,10 +22,14 @@ const DataReducer = () => {
             ({...post, upvotes: post.upvotes + 1})
             )
         }
-        case "BOOKMARK":
+        case "DOWNVOTE":
         return{
-            ...state,
-            
+        ...state,
+        forumPosts: state.forumPosts.
+        filter(post =>post.username === action.payload).
+        map(post =>
+            ({...post, upvotes: post.downvotes + 1})
+            )
         }
             default:
                 return null;
