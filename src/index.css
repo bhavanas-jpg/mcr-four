@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+:root {
+    --color-white: hsl(252, 30%, 100%);
+    --color-light: hsl(252, 30%, 95%);
+    --color-gray: hsl(252, 15%, 65%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-black: #000;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--color-dark);
+    background: var(--color-light);
+    overflow-x: hidden;
+}
+.d-flx{
+    display: flex;
+    
+}
+.ml-1{
+    margin-left: 1rem;
+}
+.link{
+    margin-left: 1rem;
+    color: var(--color-black)
+}
+.link.active{
+    font-weight: bold;
+    font-size: 1rem;
+}
+.navbar{
+    background-color: var(--color-white);
+}
+.navbar__content,
+.home__content{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.2rem 0;   
+}
+.navbar__content h3{
+    color: var(--color-primary)
+}
+.main {
+    position: relative;
+    top: 2rem;
+}
+
+.main .container {
+    display: grid;
+    grid-template-columns: 18vw auto 20vw;
+    column-gap: 2rem;
+    position: relative;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    
+}
+.sidebar__content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.profile-picture {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+  
+}
+
+img {
+    display: block;
+    width: 100%;
+    background-color: #ccc;
+}
+.user__info{
+    margin-top: 18rem;
+}
+.user__info .username{
+    font-size: 0.8rem;
+color: var(--color-gray)
+}

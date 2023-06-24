@@ -1,5 +1,8 @@
 import React from 'react'
 import { useData } from '../context/DataContext';
+import Sidebar from "./Sidebar";
+import Posts from "./Posts";
+import SortPosts from "./SortPosts"; 
 
 const Home = () => {
   const {name, state} = useData();
@@ -7,7 +10,16 @@ const Home = () => {
   console.log(state.user_name);
 
   return (
-    <div>Home</div>
+    <main className="home__content">
+        <div className="main">
+      <div className="container">
+       <Sidebar />
+       <Posts />
+       <SortPosts />
+      </div>
+    </div>
+    </main>
+  
   )
 }
 
