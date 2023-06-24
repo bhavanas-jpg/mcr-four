@@ -1,11 +1,16 @@
 import React from 'react';
 import { FaComment,FaSortUp, FaSortDown ,FaShare,FaBookmark  } from 'react-icons/fa';
 import { MdShare } from 'react-icons/md'
+import { useData } from '../context/DataContext';
+import { Link } from 'react-router-dom';
 
 const PostCard = ({post}) => {
   console.log(post);
-
-  const {username, picUrl, 
+const {dispatch, state} = useData();
+  const {
+    postId,
+    username, 
+    picUrl, 
     tags, 
     postTitle, 
      postDescription,
@@ -14,15 +19,24 @@ const PostCard = ({post}) => {
     comments,
     isBookmarked
     
-    } =post
+    } =post;
+
+    const currentPost= state.forumPosts.filter(post => post.username === username);
+
+  console.log(state.forumPosts);
 
   return (
     <main className="post__container">
         <div className="post__sec">
 
        <div className="upvote__sec">
-       <FaSortUp className="sort__icon"/>
-       <span>123</span> 
+       <FaSortUp 
+       onClick={()=>dispatch({type: "UPVOTE", payload: username})}
+       className="sort__icon"/>
+     {
+      currentPost.map(({upvotes})=>  <span>{upvotes}</span> )
+     }
+      
       <FaSortDown
       className="sort__icon" />
        </div>
@@ -44,10 +58,14 @@ const PostCard = ({post}) => {
        <p className="post__desc">{postDescription}</p>
         <div className="action__icons">
        
-        <i><FaComment /></i>
+        <i
+        onClick={()=>
+          <Link  to={`/post/:${username}`}/>
+        }
+        ><FaComment /></i>
         <i> <MdShare /></i>
         <i
-        
+        onClick={()=> dispatch({type:"BOOKMARK", payload:  postId})}
         ><FaBookmark /></i>
         </div>
         </div>

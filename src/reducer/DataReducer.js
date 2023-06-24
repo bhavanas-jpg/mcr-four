@@ -1,12 +1,32 @@
 
+import {forumData} from "../data/forumData"
 const DataReducer = () => {
     const initialState = {
-        user_name: "Pavan"
+       sortBy : "Latest Posts",
+       forumPosts: forumData.posts
     }
 
     const dataReducer = (state, action) => {
-        switch (action.payload) {
-
+        switch (action.type) {
+       case "FILTER__TYPE" : 
+       return{
+        ...state,
+        sortBy: action.payload
+       }
+       case "UPVOTE":
+        return{
+        ...state,
+        forumPosts: state.forumPosts.
+        filter(post =>post.username === action.payload).
+        map(post =>
+            ({...post, upvotes: post.upvotes + 1})
+            )
+        }
+        case "BOOKMARK":
+        return{
+            ...state,
+            
+        }
             default:
                 return null;
         }

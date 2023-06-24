@@ -3,12 +3,13 @@ import PostCard from '../components/PostCard';
 import { useData } from '../context/DataContext';
 
 const Posts = () => {
-  const {forumData} = useData();
-  const {posts} = forumData;
+  const {forumData, state, sortPosts} = useData();
+  const {posts,  sortedData} = forumData;
   return (
     <div>
+     <h3>{state.sortBy}</h3>
       {
-        posts.map(post =>(
+        sortPosts(state.sortBy).map(post =>(
           <PostCard key={post.username}post={post} />
         ))
       }
